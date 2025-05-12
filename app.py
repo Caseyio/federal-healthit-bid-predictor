@@ -1,3 +1,26 @@
+# streamlit_app.py
+# ---------------------------------------------------
+# Streamlit app to predict federal contract award amounts
+# Author: Casey Ortiz | kcarlos.ortiz@gmail.com
+# ---------------------------------------------------
+
+# Optional Streamlit config block
+# --------------------------------
+# streamlit config YAML block (optional in .streamlit/config.toml)
+# --------------------------------
+# Streamlit will ignore this if not in a config file
+
+# NOTE: If you want to set title/favicon officially,
+# put this in a `.streamlit/config.toml` instead
+
+# Example config.toml (optional, see below):
+# [theme]
+# primaryColor = "#1E88E5"
+# backgroundColor = "#F5F9FF"
+# secondaryBackgroundColor = "#E8F0FE"
+# textColor = "#262730"
+# font = "sans serif"
+
 import streamlit as st
 import pandas as pd
 import numpy as np
