@@ -1,0 +1,11 @@
+[theme]
+primaryColor = "#0B3D91"  # Deep federal blue
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F4F8"
+textColor = "#1C1C1C"
+font = "sans serif"
+
+[app]
+title = "Federal Health IT Bid Confidence Tool"
+
+# .streamlit/config.toml
