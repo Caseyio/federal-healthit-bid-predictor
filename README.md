@@ -17,9 +17,9 @@ This companion app provides a **confidence range** instead of a single predictio
 ---
 
 ## 🚀 Live App
+🔗 **[Award Amount Estimator](https://ay7jcdeztbpknhyxxbn5h3.streamlit.app)**
+🔗 **[Bid Range Predictor](https://federal-healthit-bid-predictor-mzxes68t2cusms5kmjuyyr.streamlit.app)**
 
-🔗 [Launch Award Amount Streamlit App]([https://your-app-link.streamlit.app](https://ay7jcdeztbpknhyxxbn5h3.streamlit.app))  
-🔗 [Launch Bid Range Predictor Streamlit App]([https://your-app-link.streamlit.app](https://ay7jcdeztbpknhyxxbn5h3.streamlit.app))  
 
 ---
 
