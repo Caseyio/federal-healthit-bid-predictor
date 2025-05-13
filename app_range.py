@@ -43,14 +43,15 @@ if is_va:
 input_df = pd.DataFrame([input_data])[feature_cols]
 
 # --- Predict and Show Confidence Range ---
+# --- Predict and Show Confidence Range ---
 if st.button("Calculate Confidence Range"):
     predicted_log = model.predict(input_df)
     predicted_amount = np.expm1(predicted_log[0])
     lower = predicted_amount / MARGIN
     upper = predicted_amount * MARGIN
 
-   st.success(
-    f"**Estimated Award Amount:** ${predicted_amount:,.2f}  \n"
-    f"**Confidence Range (±1.71 RMSE):** ${lower:,.0f} – ${upper:,.0f}"
+    st.success(
+        f"**Estimated Award Amount:** ${predicted_amount:,.2f}  \
+f"**Confidence Range (±1.71 RMSE):** ${lower:,.0f} – ${upper:,.0f}"
 )
     st.caption("This model is trained on over 43,000 real Health IT federal contracts between 2018–2025.")
