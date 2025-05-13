@@ -49,12 +49,17 @@ if st.button("Calculate Confidence Range"):
     lower = predicted_amount / MARGIN
     upper = predicted_amount * MARGIN
 
-    # Force formatting consistency by constructing plain text strings
-    st.success(f"**Estimated Award Amount:**  ${predicted_amount:,.2f}")
-    
-    confidence_text = f"**Confidence Range (+/- 1.71 RMSE):**  ${lower:,.2f} – ${upper:,.2f}"
-    st.success(confidence_text)
+    # Custom styled green box with matching font and consistent sizing
+    st.markdown(f"""
+    <div style='background-color: #d4edda; padding: 1em; border-radius: 5px; border: 1px solid #c3e6cb; font-size: 16px;'>
+        <strong>Estimated Award Amount:</strong> ${predicted_amount:,.2f}
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"""
+    <div style='background-color: #d4edda; padding: 1em; border-radius: 5px; border: 1px solid #c3e6cb; font-size: 16px;'>
+        <strong>Confidence Range (+/- 1.71 RMSE):</strong> ${lower:,.2f} – ${upper:,.2f}
+    </div>
+    """, unsafe_allow_html=True)
 
     st.caption("This model is trained on over 43,000 real Health IT federal contracts between 2018–2025.")
-
-
