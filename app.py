@@ -69,3 +69,5 @@ if st.button("Predict Award Amount"):
     predicted_log = model.predict(input_df)
     predicted_amount = np.expm1(predicted_log[0])
     st.success(f"Estimated Award Amount: ${predicted_amount:,.2f}")
+
+ st.caption("This model is trained on over 43,000 real Health IT federal contracts between 2018–2025.")
