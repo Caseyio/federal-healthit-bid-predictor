@@ -43,21 +43,32 @@ if is_va:
 input_df = pd.DataFrame([input_data])[feature_cols]
 
 # --- Predict and Show Confidence Range ---
+# --- Predict and Show Confidence Range ---
 if st.button("Calculate Confidence Range"):
     predicted_log = model.predict(input_df)
     predicted_amount = np.expm1(predicted_log[0])
     lower = predicted_amount / MARGIN
     upper = predicted_amount * MARGIN
 
-    # Custom styled green box with matching font and consistent sizing
+    # Exact Streamlit success-style green boxes
+    box_style = """
+        background-color: #dff0d8;
+        padding: 1rem;
+        border-radius: 4px;
+        border: 1px solid #d0e9c6;
+        color: #3c763d;
+        font-size: 16px;
+        margin-bottom: 0.75rem;
+    """
+
     st.markdown(f"""
-    <div style='background-color: #d4edda; padding: 1em; border-radius: 5px; border: 1px solid #c3e6cb; font-size: 16px;'>
+    <div style="{box_style}">
         <strong>Estimated Award Amount:</strong> ${predicted_amount:,.2f}
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown(f"""
-    <div style='background-color: #d4edda; padding: 1em; border-radius: 5px; border: 1px solid #c3e6cb; font-size: 16px;'>
+    <div style="{box_style}">
         <strong>Confidence Range (+/- 1.71 RMSE):</strong> ${lower:,.2f} – ${upper:,.2f}
     </div>
     """, unsafe_allow_html=True)
