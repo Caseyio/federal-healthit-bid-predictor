@@ -11,16 +11,8 @@ feature_cols = joblib.load("xgb_feature_columns.pkl")
 RMSE_LOG = 1.71
 MARGIN = np.expm1(RMSE_LOG)  # ~4.5x error margin on actual award dollars
 
-st.set_page_config(page_title="Health IT Bid Confidence Tool", layout="centered")
-
-# --- Centered Title and Subtitle ---
-st.markdown(
-    """
-    <h1 style='text-align: center; margin-bottom: 0;'>Federal Health IT Bid Confidence Tool</h1>
-    <p style='text-align: center;'>Estimate a range of likely award amounts based on historical contract data and your selected inputs.</p>
-    """,
-    unsafe_allow_html=True
-)
+st.title("Federal Health IT Bid Confidence Tool")
+st.write("Estimate the award amount for a federal Health IT contract based on contract features.")
 
 # --- User Inputs ---
 st.header("Enter Contract Details")
