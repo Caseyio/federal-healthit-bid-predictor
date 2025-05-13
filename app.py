@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import joblib
 
+st.set_page_config(page_title="Federal Health IT Award Estimator", layout="centered")
+
 # --- Load model and feature columns ---
 model = joblib.load("xgb_federal_award_model.pkl")
 feature_cols = joblib.load("xgb_feature_columns.pkl")
