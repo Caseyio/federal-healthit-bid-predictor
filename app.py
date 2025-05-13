@@ -14,12 +14,12 @@
 # put this in a `.streamlit/config.toml` instead
 
 # Example config.toml (optional, see below):
-# [theme]
-# primaryColor = "#1E88E5"
-# backgroundColor = "#F5F9FF"
-# secondaryBackgroundColor = "#E8F0FE"
-# textColor = "#262730"
-# font = "sans serif"
+[theme]
+primaryColor = "#1E88E5"
+backgroundColor = "#F5F9FF"
+secondaryBackgroundColor = "#E8F0FE"
+textColor = "#262730"
+font = "sans serif"
 
 import streamlit as st
 import pandas as pd
