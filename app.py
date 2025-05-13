@@ -49,10 +49,10 @@ set_aside = st.selectbox("Set-Aside Type", [
 ])
 is_va = st.checkbox("Department of Veterans Affairs is the awarding agency")
 
-# --- Build Input Row ---
+# Build input with all expected columns defaulted to 0
 input_data = {col: 0 for col in feature_cols}
 
-# Map inputs to the right one-hot columns
+# Populate input_data from user selections
 input_data[f"naics_code_{naics_code}"] = 1
 input_data[f"pricing_type_{pricing_type}"] = 1
 input_data["offers_received"] = offers_received
@@ -60,7 +60,9 @@ input_data[f"set_aside_{set_aside}"] = 1
 if is_va:
     input_data["agency_Department of Veterans Affairs"] = 1
 
-input_df = pd.DataFrame([input_data])
+# Convert to DataFrame and enforce column order
+input_df = pd.DataFrame([input_data])[feature_cols]
+
 
 # --- Predict and Show Result ---
 if st.button("Predict Award Amount"):
