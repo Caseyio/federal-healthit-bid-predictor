@@ -49,13 +49,13 @@ if st.button("Calculate Confidence Range"):
     lower = predicted_amount / MARGIN
     upper = predicted_amount * MARGIN
 
-    st.markdown(f"""
-    <div style='text-align: center; font-size: 22px;'>
-        <strong>Predicted Award Estimate:</strong><br>
-        <span style='font-size: 28px;'>${predicted_amount:,.2f}</span><br><br>
-        <strong>Confidence Range (±1.71 RMSE):</strong><br>
-        ${lower:,.0f} – ${upper:,.0f}
-    </div>
-    """, unsafe_allow_html=True)
+ #   st.markdown(f"""
+  #  <div style='text-align: center; font-size: 22px;'>
+   #     <strong>Predicted Award Estimate:</strong><br>
+    #    <span style='font-size: 28px;'>${predicted_amount:,.2f}</span><br><br>
+     #   <strong>Confidence Range (±1.71 RMSE):</strong><br>
+      #  ${lower:,.0f} – ${upper:,.0f}
+   # </div>
+    #""", unsafe_allow_html=True)
 
     st.caption("This model is trained on over 43,000 real Health IT federal contracts between 2018–2025.")
