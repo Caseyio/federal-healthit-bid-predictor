@@ -1,73 +1,87 @@
-# 📊 Federal Health IT Contract Bid Predictor
+# Federal Health IT Contract Bid Predictor
 
 This project uses real federal procurement data to predict the **expected award amount** for Health IT contracts based on contract structure, competition, and agency context.
 
-> Built as a career-aligned data science case study targeting roles in **federal health IT**, **capture management**, and **data-driven proposal strategy**.
+> Built as a career-aligned case study targeting roles in **federal Health IT**, **capture management**, and **data-driven proposal strategy**.
 
 ---
 
-## 📈 Health IT Bid Confidence Tool (`app_range.py`)
+## Live Applications
 
-This companion app provides a **confidence range** instead of a single prediction. It helps capture managers and proposal strategists better understand the **award uncertainty** and plan more effectively.
+- 🔗 [**Award Amount Estimator**](https://ay7jcdeztbpknhyxxbn5h3.streamlit.app)  
+- 🔗 [**Bid Range Predictor (Confidence Tool)**](https://federal-healthit-bid-predictor-mzxes68t2cusms5kmjuyyr.streamlit.app)
 
-🧠 Based on the model’s RMSE of ~1.71 (log scale), most predictions fall within a **±4.5x range**.
-
-### ✨ Example Output
-
----
-
-## 🚀 Live App
-🔗 **[Award Amount Estimator](https://ay7jcdeztbpknhyxxbn5h3.streamlit.app)**
-🔗 **[Bid Range Predictor](https://federal-healthit-bid-predictor-mzxes68t2cusms5kmjuyyr.streamlit.app)**
-
+These Streamlit apps allow capture teams and analysts to explore award predictions or bid confidence intervals interactively, supporting faster and smarter PTW (Price-to-Win) decisions.
 
 ---
 
-## 🎯 Use Case
+## Use Case
 
-These apps helps proposal teams, capture managers, or analysts **estimate a competitive bid amount** for federal contracts in the Health IT space. Input key contract features such as:
+These tools help federal proposal teams, capture managers, and business analysts **estimate a competitive bid amount** using over **43,000 real contract records** (2018–2025). Just input contract attributes such as:
 
-- NAICS code (e.g., 541512)
-- Pricing type (e.g., Firm Fixed Price)
-- Set-aside structure
-- Agency
-- Number of offers expected
+- ✅ NAICS code (e.g., 541512)
+- ✅ Pricing type (e.g., Firm Fixed Price)
+- ✅ Set-aside category
+- ✅ Target agency (e.g., VA or HHS)
+- ✅ Number of offers received
 
-…and get a predicted award amount or bid range based on over **43,000 real contract records** from 2018–2025.
-
----
-
-## 🧠 Model Details
-
-- Model: `XGBoost` regressor (final RMSE ≈ **1.71**, R² ≈ **0.35**)
-- Features: One-hot encoded NAICS, set-aside, pricing type, and agency fields
-- Target: Log-transformed total award amount
-- Interpretation: SHAP values, PDP++, and feature importance tracking
-- Deployment: Streamlit + GitHub
+Get a point estimate or confidence interval for the likely award amount — fast, data-driven decision support.
 
 ---
 
-## 📁 Files
+## 🛠️ Apps Included
 
-- `app.py`: Streamlit web app for award amount
-- `app_range.py`: Streamlit web app for bid range
-- `xgb_federal_award_model.pkl`: Trained XGBoost model
-- `xgb_feature_columns.pkl`: List of encoded features used in training
+### `app.py` – Award Amount Estimator  
+Returns a predicted contract award amount using a trained XGBoost regression model.
+
+### `app_range.py` – Bid Range Confidence Tool  
+Provides a **±1.71 RMSE confidence range** for bid planning based on the same model.
+
+#### 📊 Example Output
+> Estimate: \$5.2M  
+> Confidence Range: \$1.2M – \$23.6M
 
 ---
 
-## 🛠️ Setup Locally
+## 🔍 Model Summary
+
+- **Model**: XGBoost regressor  
+- **Target**: Log-transformed total award amount  
+- **Performance**: RMSE ≈ **1.71**, R² ≈ **0.35**  
+- **Features**: One-hot encoded NAICS, set-aside, pricing type, and agency fields  
+- **Interpretation**: SHAP values, PDP++, feature importance  
+- **Deployment**: Streamlit + GitHub
+
+---
+
+## 📁 Repository Contents
+
+| File / Folder             | Description                                        |
+|---------------------------|----------------------------------------------------|
+| `app.py`                  | Streamlit app for single award prediction          |
+| `app_range.py`            | Streamlit app with confidence range output         |
+| `xgb_federal_award_model.pkl` | Trained XGBoost model (log scale)            |
+| `xgb_feature_columns.pkl` | List of encoded feature columns used in training   |
+| `requirements.txt`        | Dependencies for running locally                   |
+
+---
+
+## Run Locally
+
+To test the apps on your own machine:
 
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-streamlit run app.py
 
-pip install -r requirements.txt
+# Run either app
+streamlit run app.py
 streamlit run app_range.py
 
-## 👤 Author
+👤 Author
 
-**Casey Ortiz**  
-📍 Annapolis, MD  
-📫 kcarlos.ortiz@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/kco1) | [GitHub](https://github.com/caseio)
+Casey Ortiz
+📍 Annapolis, MD
+📫 kcarlos.ortiz@gmail.com
+🔗 LinkedIn
+🔗 GitHub
