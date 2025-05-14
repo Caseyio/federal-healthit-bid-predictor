@@ -29,7 +29,7 @@ Get a point estimate or confidence interval for the likely award amount — fast
 
 ---
 
-## 🛠️ Apps Included
+## Apps Included
 
 ### `app.py` – Award Amount Estimator  
 Returns a predicted contract award amount using a trained XGBoost regression model.
@@ -77,6 +77,8 @@ pip install -r requirements.txt
 # Run either app
 streamlit run app.py
 streamlit run app_range.py
+```
+---
 
 👤 Author
 
